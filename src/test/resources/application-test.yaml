@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: llm-service
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        default_schema: llm_service
+    open-in-view: false
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    default-schema: llm_service
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+app:
+  kafka:
+    topics:
+      email-conversation-created: email.conversation.created.test
+      llm-appeal-enriched: llm.appeal.enriched.test
+  email-integration:
+    base-url: http://localhost:9999
+    connect-timeout-millis: 5000
+    read-timeout-millis: 10000
+  llm:
+    base-url: http://localhost:9998
+    api-key: test-key
+    model: test-model
+    connect-timeout-millis: 5000
+    read-timeout-millis: 10000
