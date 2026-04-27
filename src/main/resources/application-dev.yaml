@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    show-sql: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:6437/llm_service?currentSchema=llm_service
+
+app:
+  email-integration:
+    base-url: http://localhost:8084

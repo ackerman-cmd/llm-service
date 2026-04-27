@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/sql/001-create-llm-analysis-log.sql
+  - include:
+      file: db/changelog/sql/002-create-outbox-event.sql
